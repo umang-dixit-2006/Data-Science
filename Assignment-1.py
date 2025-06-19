@@ -30,7 +30,8 @@ def main_menu():
             search_employee()
         elif choice == 3: 
             print("\nEmployee List ")
-            view_all_employees(emp_id)
+            for emp_id, details in employees.items():
+                print(f"Employee ID: {emp_id}, Name: {details['name']}, Age: {details['age']}, Department: {details['Department']}, Salary: {details['Salary']}")
         elif choice == 4:
             print("\nThank you for using the Employee Management System!")
             print("Exiting the system.")
@@ -67,14 +68,6 @@ def search_employee():
         print(f"Employee ID: {emp_id}, Name: {emp_details['name']}, Age: {emp_details['age']}, Department: {emp_details['Department']}, Salary: {emp_details['Salary']}")
     else:
         print("Employee not found.")
-
-#View all employees by ID
-def view_all_employees(emp_id):
-    if emp_id in employees:
-        emp_details = employees[emp_id]
-        return f"Employee ID: {emp_id}, Name: {emp_details['name']}, Age: {emp_details['age']}, Department: {emp_details['Department']}, Salary: {emp_details['Salary']}"
-    else:
-        return "Employee not found."
 
 #Call the main menu function to start the program
 if __name__ == "__main__":
