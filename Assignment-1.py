@@ -30,8 +30,7 @@ def main_menu():
             search_employee()
         elif choice == 3: 
             print("\nEmployee List ")
-            for emp_id, details in employees.items():
-                print(f"ID: {emp_id}, Name: {details['name']}, Age: {details['age']}, Department: {details['Department']}, Salary: {details['Salary']}")
+            view_all_employees(emp_id)
         elif choice == 4:
             print("\nThank you for using the Employee Management System!")
             print("Exiting the system.")
